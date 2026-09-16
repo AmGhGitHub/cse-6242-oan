@@ -1,0 +1,1062 @@
+[
+  {
+    "description": "Remove 7249 rows",
+    "operation": {
+      "op": "core/row-removal",
+      "engineConfig": {
+        "facets": [
+          {
+            "type": "list",
+            "name": "Common Name",
+            "expression": "isBlank(value)",
+            "columnName": "Common Name",
+            "invert": false,
+            "omitBlank": false,
+            "omitError": false,
+            "selection": [
+              {
+                "v": {
+                  "v": true,
+                  "l": "true"
+                }
+              }
+            ],
+            "selectBlank": false,
+            "selectError": false
+          }
+        ],
+        "mode": "row-based"
+      },
+      "description": "Remove rows"
+    }
+  },
+  {
+    "description": "Remove 14848 rows",
+    "operation": {
+      "op": "core/row-removal",
+      "engineConfig": {
+        "facets": [
+          {
+            "type": "text",
+            "name": "Subject",
+            "columnName": "Subject",
+            "query": "Airport",
+            "mode": "text",
+            "caseSensitive": true,
+            "invert": true
+          }
+        ],
+        "mode": "row-based"
+      },
+      "description": "Remove rows"
+    }
+  },
+  {
+    "description": "Create new column Airport based on column Subject by filling 1764 rows with grel:value.find(/\\b(?!(?:At|In|On|To|By|From|Via|Near|The|And|Of|En|Between)\\b)[A-Z\\u00C0-\\u00DE][A-Za-z0-9\\u00C0-\\u024F'\\u2019.-]*(?:\\s+(?:[A-Z\\u00C0-\\u00DE][A-Za-z0-9\\u00C0-\\u024F'\\u2019.-]*|(?:al|da|de|del|di|do|dos|du|el|la|las|le|les|lo|los)))*\\s+Airport\\b/)[0]",
+    "operation": {
+      "op": "core/column-addition",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "baseColumnName": "Subject",
+      "expression": "grel:value.find(/\\b(?!(?:At|In|On|To|By|From|Via|Near|The|And|Of|En|Between)\\b)[A-Z\\u00C0-\\u00DE][A-Za-z0-9\\u00C0-\\u024F'\\u2019.-]*(?:\\s+(?:[A-Z\\u00C0-\\u00DE][A-Za-z0-9\\u00C0-\\u024F'\\u2019.-]*|(?:al|da|de|del|di|do|dos|du|el|la|las|le|les|lo|los)))*\\s+Airport\\b/)[0]",
+      "onError": "set-to-blank",
+      "newColumnName": "Airport",
+      "columnInsertIndex": 5,
+      "description": "Create column Airport at index 5 based on column Subject using expression grel:value.find(/\\b(?!(?:At|In|On|To|By|From|Via|Near|The|And|Of|En|Between)\\b)[A-Z\\u00C0-\\u00DE][A-Za-z0-9\\u00C0-\\u024F'\\u2019.-]*(?:\\s+(?:[A-Z\\u00C0-\\u00DE][A-Za-z0-9\\u00C0-\\u024F'\\u2019.-]*|(?:al|da|de|del|di|do|dos|du|el|la|las|le|les|lo|los)))*\\s+Airport\\b/)[0]"
+    }
+  },
+  {
+    "description": "Mass edit 34 cells in column Airport",
+    "operation": {
+      "op": "core/mass-edit",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "Airport",
+      "expression": "value",
+      "edits": [
+        {
+          "from": [
+            "Shenzhen Bao'An Airport",
+            "Shenzhen Bao'an Airport",
+            "Shenzhen Baoan Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Shenzhen Bao’an Airport"
+        },
+        {
+          "from": [
+            "O.R Tambo International Airport",
+            "OR Tambo International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "O.R. Tambo International Airport"
+        },
+        {
+          "from": [
+            "Mérida International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Merida International Airport"
+        },
+        {
+          "from": [
+            "Xi’an Xianyang Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Xi'an Xianyang Airport"
+        }
+      ],
+      "description": "Mass edit cells in column Airport"
+    }
+  },
+  {
+    "description": "Mass edit 670 cells in column Airport",
+    "operation": {
+      "op": "core/mass-edit",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "Airport",
+      "expression": "value",
+      "edits": [
+        {
+          "from": [
+            "Gunagzhou Baiyun Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Guangzhou Baiyun Airport"
+        },
+        {
+          "from": [
+            "Beijing Captial Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Beijing Capital Airport"
+        },
+        {
+          "from": [
+            "Tan Son Nha International Airport",
+            "Than Son Nhat Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Tan Son Nhat International Airport"
+        },
+        {
+          "from": [
+            "Maputo Interantional Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Maputo International Airport"
+        },
+        {
+          "from": [
+            "Xiamen Gaogi Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Xiamen Gaoqi International Airport"
+        },
+        {
+          "from": [
+            "Shenyang Taoxin International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Shenyang Taoxian International Airport"
+        },
+        {
+          "from": [
+            "Bangkok Suvarnbhumi Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Bangkok Suvarnabhumi Airport"
+        },
+        {
+          "from": [
+            "Berlin Schonefeld Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Berlin Schoenefeld Airport"
+        },
+        {
+          "from": [
+            "Bandaranayake International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Bandaranaike International Airport"
+        },
+        {
+          "from": [
+            "Guangzhou Airport",
+            "Guangzhou Baiyun Airport",
+            "Guangzhou International Airport",
+            "Baiyun Airport",
+            "Baiyun International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Guangzhou Baiyun International Airport"
+        },
+        {
+          "from": [
+            "Shenzhen Airport",
+            "Shenzhen Bao'an Airport",
+            "Shenzhen Bao’an Airport",
+            "Shenzhen Bao'an International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Shenzhen Bao'an International Airport"
+        },
+        {
+          "from": [
+            "Hong Kong Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Hong Kong International Airport"
+        },
+        {
+          "from": [
+            "Shanghai Airport",
+            "Shanghai Pudong Airport",
+            "Pudong Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Shanghai Pudong International Airport"
+        },
+        {
+          "from": [
+            "Shanghai Hongqiao Airport",
+            "Shanghai Hongqiao International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Shanghai Hongqiao International Airport"
+        },
+        {
+          "from": [
+            "Beijing Airport",
+            "Beijing Capital Airport",
+            "Beijing Capital International Airport",
+            "Capital Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Beijing Capital International Airport"
+        },
+        {
+          "from": [
+            "OR Tambo Airport",
+            "OR Tambo International Airport",
+            "O.R Tambo International Airport",
+            "O.R. Tambo International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "O.R. Tambo International Airport"
+        },
+        {
+          "from": [
+            "Kunming Airport",
+            "Kunming Changshui Airport",
+            "Kunming Changshui International Airport",
+            "Changshui Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Kunming Changshui International Airport"
+        },
+        {
+          "from": [
+            "Noi Bai Airport",
+            "Noi Bai International Airport",
+            "Hanoi Noi Bai International Airport",
+            "Hanoi Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Noi Bai International Airport"
+        },
+        {
+          "from": [
+            "Suvarnabhumi Airport",
+            "Suvarnabhumi International Airport",
+            "Bangkok Suvarnabhumi Airport",
+            "Bangkok International Suvarnabhumi Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Suvarnabhumi Airport"
+        },
+        {
+          "from": [
+            "Jomo Kenyatta Airport",
+            "Jomo Kenyatta International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Jomo Kenyatta International Airport"
+        },
+        {
+          "from": [
+            "Chhatrapati Shivaji International Airport",
+            "Chhatrapati Shivaji Maharaj International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Chhatrapati Shivaji Maharaj International Airport"
+        },
+        {
+          "from": [
+            "Amsterdam Airport",
+            "Amsterdam International Airport",
+            "Amsterdam Schiphol Airport",
+            "Amsterdam Schipol Airport",
+            "Amsterdam-Schiphol Airport",
+            "Amsterdam-Schiphol International Airport",
+            "Amsterdam’s Schiphol Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Amsterdam Schiphol Airport"
+        },
+        {
+          "from": [
+            "Mexico City Airport",
+            "Mexico City International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Mexico City International Airport"
+        },
+        {
+          "from": [
+            "Kuala Lumpur Airport",
+            "Kuala Lumpur International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Kuala Lumpur International Airport"
+        },
+        {
+          "from": [
+            "Miami Airport",
+            "Miami International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Miami International Airport"
+        },
+        {
+          "from": [
+            "Tan Son Nhat Airport",
+            "Tan Son Nhat International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Tan Son Nhat International Airport"
+        },
+        {
+          "from": [
+            "Qingdao Airport",
+            "Qingdao Liuting Airport",
+            "Qingdao Liuting International Airport",
+            "Qingdao Jiaodong International Airport",
+            "Liuting Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Qingdao Liuting International Airport"
+        },
+        {
+          "from": [
+            "Chengdu Airport",
+            "Chengdu Shuangliu Airport",
+            "Chengdu Shuangliu International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Chengdu Shuangliu International Airport"
+        },
+        {
+          "from": [
+            "Soekarno Hatta Airport",
+            "Soekarno Hatta International Airport",
+            "Soekarno-Hatta Airport",
+            "Soekarno-Hatta International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Soekarno-Hatta International Airport"
+        },
+        {
+          "from": [
+            "Ivato Airport",
+            "Ivato International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Ivato International Airport"
+        }
+      ],
+      "description": "Mass edit cells in column Airport"
+    }
+  },
+  {
+    "description": "Mass edit 327 cells in column Airport",
+    "operation": {
+      "op": "core/mass-edit",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "Airport",
+      "expression": "value",
+      "edits": [
+        {
+          "from": [
+            "Ngurah Rai Airport",
+            "Ngurah Rai International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Ngurah Rai International Airport"
+        },
+        {
+          "from": [
+            "Entebbe Airport",
+            "Entebbe International Airport",
+            "Kampala Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Entebbe International Airport"
+        },
+        {
+          "from": [
+            "Dalian Airport",
+            "Dalian Zhoushuizi Airport",
+            "Dalian Zhoushuizi International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Dalian Zhoushuizi International Airport"
+        },
+        {
+          "from": [
+            "Chongqing Airport",
+            "Chongqing Jiangbei Airport",
+            "Chongqing Jiangbei International Airport",
+            "Jiangbei International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Chongqing Jiangbei International Airport"
+        },
+        {
+          "from": [
+            "Nanjing Lukou Airport",
+            "Nanjing Lukou International Airport",
+            "Lukou Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Nanjing Lukou International Airport"
+        },
+        {
+          "from": [
+            "Hangzhou Airport",
+            "Hangzhou Xiaoshan Airport",
+            "Hangzhou Xiaoshan International Airport",
+            "Xiaoshan Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Hangzhou Xiaoshan International Airport"
+        },
+        {
+          "from": [
+            "Jinan Airport",
+            "Jinan Yaoqiang Airport",
+            "Jinan Yaoqiang International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Jinan Yaoqiang International Airport"
+        },
+        {
+          "from": [
+            "Wuhan Tianhe Airport",
+            "Wuhan Tianhe International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Wuhan Tianhe International Airport"
+        },
+        {
+          "from": [
+            "Tianjin Airport",
+            "Tianjin Binhai Airport",
+            "Tianjin Binhai International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Tianjin Binhai International Airport"
+        },
+        {
+          "from": [
+            "Nanning Airport",
+            "Nanning Wuxu Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Nanning Wuxu Airport"
+        },
+        {
+          "from": [
+            "Fuzhou Airport",
+            "Fuzhou Changle Airport",
+            "Fuzhou Changle International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Fuzhou Changle International Airport"
+        },
+        {
+          "from": [
+            "Lanzhou Airport",
+            "Lanzhou Zhongchuan Airport",
+            "Lanzhou Zhongchuan International Airport",
+            "Zhongchuan Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Lanzhou Zhongchuan International Airport"
+        },
+        {
+          "from": [
+            "Shenyang Taoxian Airport",
+            "Shenyang Taoxian International Airport",
+            "Taoxian Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Shenyang Taoxian International Airport"
+        },
+        {
+          "from": [
+            "Xiamen Airport",
+            "Xiamen Gaoqi International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Xiamen Gaoqi International Airport"
+        },
+        {
+          "from": [
+            "Zhengzhou Airport",
+            "Zhengzhou Xinzheng Airport",
+            "Xin Zheng International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Zhengzhou Xinzheng Airport"
+        },
+        {
+          "from": [
+            "Taiwan Taoyuan Airport",
+            "Taiwan Taoyuan International Airport",
+            "Taoyuan Airport",
+            "Taoyuan International Airport",
+            "Taipei Taoyuan Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Taiwan Taoyuan International Airport"
+        },
+        {
+          "from": [
+            "Kualanamu Airport",
+            "Kualanamu International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Kualanamu International Airport"
+        },
+        {
+          "from": [
+            "Jieyang Chaoshan Airport",
+            "Jieyang Chaoshan International Airport",
+            "Chaoshan Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Jieyang Chaoshan International Airport"
+        },
+        {
+          "from": [
+            "Don Mueang Airport",
+            "Don Mueang International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Don Mueang International Airport"
+        },
+        {
+          "from": [
+            "Douala Airport",
+            "Douala International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Douala International Airport"
+        },
+        {
+          "from": [
+            "Harare Airport",
+            "Harare International Airport",
+            "Robert Mugabe Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Harare International Airport"
+        },
+        {
+          "from": [
+            "El Dorado Airport",
+            "El Dorado International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "El Dorado International Airport"
+        },
+        {
+          "from": [
+            "Sunan Shuofang Airport",
+            "Sunan Shuofang International Airport",
+            "Shuofang International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Sunan Shuofang International Airport"
+        },
+        {
+          "from": [
+            "Ndjili Airport",
+            "Ndjili International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Ndjili International Airport"
+        },
+        {
+          "from": [
+            "Maputo Airport",
+            "Maputo International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Maputo International Airport"
+        },
+        {
+          "from": [
+            "Luanda Airport",
+            "Luanda International Airport",
+            "Fevereiro International Airport",
+            "Quatro de Fevereiro International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Quatro de Fevereiro International Airport"
+        },
+        {
+          "from": [
+            "Supadio Airport",
+            "Supadio International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Supadio International Airport"
+        },
+        {
+          "from": [
+            "Merida Airport",
+            "Merida International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Merida International Airport"
+        },
+        {
+          "from": [
+            "Ciudad Juárez Airport",
+            "Ciudad Juárez International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Ciudad Juárez International Airport"
+        },
+        {
+          "from": [
+            "Phnom Penh Airport",
+            "Phnom Penh International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Phnom Penh International Airport"
+        }
+      ],
+      "description": "Mass edit cells in column Airport"
+    }
+  },
+  {
+    "description": "Mass edit 150 cells in column Airport",
+    "operation": {
+      "op": "core/mass-edit",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "Airport",
+      "expression": "value",
+      "edits": [
+        {
+          "from": [
+            "Tijuana Airport",
+            "Tijuana International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Tijuana International Airport"
+        },
+        {
+          "from": [
+            "Dusseldorf Airport",
+            "Dusseldorf International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Dusseldorf International Airport"
+        },
+        {
+          "from": [
+            "Kamuzu Airport",
+            "Kamuzu International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Kamuzu International Airport"
+        },
+        {
+          "from": [
+            "Murtala Mohammed Airport",
+            "Murtala Muhammed Airport",
+            "Murtala Muhammed International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Murtala Muhammed International Airport"
+        },
+        {
+          "from": [
+            "Mohammed V Airport",
+            "Mohammed V International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Mohammed V International Airport"
+        },
+        {
+          "from": [
+            "Sultan Syarif Kasim II Airport",
+            "Sultan Syarif Kasim II International Airport",
+            "Sutan Syarif Kasim II Pekanbaru Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Sultan Syarif Kasim II International Airport"
+        },
+        {
+          "from": [
+            "Julius Nyerere Airport",
+            "Julius Nyerere International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Julius Nyerere International Airport"
+        },
+        {
+          "from": [
+            "Sao Paulo Airport",
+            "Sao Paulo International Airport",
+            "Guarulhos Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Guarulhos Airport"
+        },
+        {
+          "from": [
+            "Manaus Airport",
+            "Manaus International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Manaus International Airport"
+        },
+        {
+          "from": [
+            "Mangshi Airport",
+            "Mangshi Dehong Airport",
+            "Mangshi International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Mangshi International Airport"
+        },
+        {
+          "from": [
+            "Nanchang Airport",
+            "Nanchang Changbei Airport",
+            "Changbei Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Nanchang Changbei Airport"
+        },
+        {
+          "from": [
+            "Mopah Airport",
+            "Mopah Merauke Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Mopah Airport"
+        },
+        {
+          "from": [
+            "Schiphol Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Amsterdam Schiphol Airport"
+        },
+        {
+          "from": [
+            "Sanya Phoenix Airport",
+            "Sanya Phoenix International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Sanya Phoenix International Airport"
+        },
+        {
+          "from": [
+            "San Luis Potosí Airport",
+            "San Luis Potosí International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "San Luis Potosí International Airport"
+        },
+        {
+          "from": [
+            "Tocumen Airport",
+            "Tocumen International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Tocumen International Airport"
+        },
+        {
+          "from": [
+            "Wenzhou Airport",
+            "Wenzhou Longwan International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Wenzhou Longwan International Airport"
+        },
+        {
+          "from": [
+            "Urumqi Airport",
+            "Urumqi Diwopu Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Urumqi Diwopu Airport"
+        },
+        {
+          "from": [
+            "Leipzig Airport",
+            "Leipzig/Halle Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Leipzig/Halle Airport"
+        },
+        {
+          "from": [
+            "Karlsruhe-Baden-Baden International Airport",
+            "Baden-Baden Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Karlsruhe-Baden-Baden International Airport"
+        },
+        {
+          "from": [
+            "Changsha Airport",
+            "Changsha Huanghua Airport",
+            "Changsha Huanghua International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Changsha Huanghua International Airport"
+        },
+        {
+          "from": [
+            "Melbourne Airport",
+            "Melbourne International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Melbourne Airport"
+        },
+        {
+          "from": [
+            "Mumbai Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Chhatrapati Shivaji Maharaj International Airport"
+        },
+        {
+          "from": [
+            "Kolkata Airport",
+            "Netaji Subhas Chandra Bose Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Netaji Subhas Chandra Bose Airport"
+        },
+        {
+          "from": [
+            "Singapore Airport",
+            "Changi Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Changi International Airport"
+        },
+        {
+          "from": [
+            "Chennai Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Chennai International Airport"
+        },
+        {
+          "from": [
+            "Shahjalal International Airport",
+            "Hazrat Shahjalal International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Hazrat Shahjalal International Airport"
+        },
+        {
+          "from": [
+            "Hanover Airport",
+            "Hannover Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Hannover Airport"
+        },
+        {
+          "from": [
+            "Istanbul Airport",
+            "Istanbul's Ataturk Airport",
+            "Ataturk Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Istanbul Airport"
+        },
+        {
+          "from": [
+            "Addis Ababa Bole International Airport",
+            "Addis Abbaba Bole Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Addis Ababa Bole International Airport"
+        }
+      ],
+      "description": "Mass edit cells in column Airport"
+    }
+  },
+  {
+    "description": "Mass edit 22 cells in column Airport",
+    "operation": {
+      "op": "core/mass-edit",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "Airport",
+      "expression": "value",
+      "edits": [
+        {
+          "from": [
+            "Blaise Diagne Airport",
+            "Blaise Diagne International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Blaise Diagne International Airport"
+        },
+        {
+          "from": [
+            "Boryspil Airport",
+            "Boryspil International Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Boryspil International Airport"
+        },
+        {
+          "from": [
+            "Domodedovo Airport",
+            "Sheremetyevo Airport",
+            "Vnukovo Airport"
+          ],
+          "fromBlank": false,
+          "fromError": false,
+          "to": "Domodedovo Airport"
+        }
+      ],
+      "description": "Mass edit cells in column Airport"
+    }
+  }
+]
